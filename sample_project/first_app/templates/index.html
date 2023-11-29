@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is a Home Page </h1>
+    <h1>Name : {{Name}}</h1>
+    <h1>Address : {{address}}</h1>
+
+    {% if age >= 20 %}
+        <h1>Your age parfect </h1>
+    {% elif age >= 10 and age <= 19 %}
+        <h1>Not profeat age</h1>
+    {% else%}
+        <h1>children</h1>
+    {%endif%}
+  
+
+    
+
+
+    <h1>{{lst | join:' - '}}</h1>
+    <h1>{{lst | length}}</h1>
+    <h1>{{birthday | date:"D d M Y " }}</h1>
+    <h1>Welcome Django Course !</h1>
+    {% filter upper %}
+        <p>Have a great day!</p>
+    {% endfilter %}
+
+    {% for num in numbers %}
+    <h1>This add value now : {{num|add:"1"}}</h1>
+    {% endfor %}
+    {% for c in course%}
+        <h1>{{c.c_name|add:"  -  checkHere"}}</h1>
+        <h1>{{c.c_name | addslashes}}</h1>
+        <p>In views.py you can see what the name variable looks like.</p>
+        {% endfor %}
+        
+        <h1>{{Name|capfirst}}</h1>
+        
+        
+        <h1>{{blog|cut:"views.py"}}</h1>
+   
+
+        {% for x in course|dictsort:"fee" %}
+            <h1>{{x}}</h1>
+        {% endfor %}
+        <h1>Sort in assending and disending </h1>
+        {% for x in course|dictsortreversed:"fee"%}
+            <h1>{{x}}</h1>
+        {% endfor %}
+
+        {% if totalsum|divisibleby:5 %}
+        <h1>Yes, it is!</h1>
+        {% else %}
+        <h1>No,it is! </h1>
+        {% endif %}
+        <h1>{{ size|filesizeformat }}</h1>
+        <h1>{{numbers | first}}</h1>
+        <h1>{{float|floatformat:2}}</h1>
+        <h1>{{numbers|length_is:3}}</h1>
+        <h1>{{size|get_digit:3}}</h1>
+        <h1>{{table|lower}}</h1>
+       
+
+
+
+
+
+
+
+
+
+</body>
+</html>
