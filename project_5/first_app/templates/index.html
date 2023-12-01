@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-primary text-center "> Inheritance Use of </h1>
+
+    <div class=" container d-flex jusitfy-content-center aling-items-center flex-wrap gap-5">
+        {% for i in meals %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{i.strMealThumb}}" class="card-img-top" alt="{{i.strMealThumb}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.strMeal}}</h5>
+                    <p class="card-text">{{i.idMeal}}</p>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
